@@ -19,7 +19,7 @@ resource "aws_apigatewayv2_integration" "apigw_integration" {
 
 resource "aws_apigatewayv2_route" "apigw_route_to_all_internal" {
   api_id             = data.aws_apigatewayv2_api.hackathon_api.id
-  route_key          = "ANY /${lower(local.project_name)}/{proxy+}"
+  route_key          = "ANY /${lower(local.context_name)}/{proxy+}"
   authorization_type = "CUSTOM"
   authorizer_id      = var.authorizer_id
   target             = "integrations/${aws_apigatewayv2_integration.apigw_integration.id}"
@@ -30,7 +30,7 @@ resource "aws_apigatewayv2_route" "apigw_route_to_all_internal" {
 
 resource "aws_apigatewayv2_route" "apigw_route_to_root" {
   api_id             = data.aws_apigatewayv2_api.hackathon_api.id
-  route_key          = "ANY /${lower(local.project_name)}"
+  route_key          = "ANY /${lower(local.context_name)}"
   authorization_type = "CUSTOM"
   authorizer_id      = var.authorizer_id
   target             = "integrations/${aws_apigatewayv2_integration.apigw_integration.id}"
