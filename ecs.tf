@@ -245,6 +245,10 @@ resource "aws_ecs_task_definition" "task_definition" {
           {
             name  = "time-tracking-service.configuration.s3.mongo-ssl.bucket"
             value = local.documentdb.bucket.name
+          },
+          {
+            name  = "time-tracking-service.configuration.s3.mongo-ssl.file"
+            value = local.documentdb.file.name
           }
         ]
       )

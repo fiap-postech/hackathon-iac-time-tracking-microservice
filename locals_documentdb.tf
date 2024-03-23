@@ -29,6 +29,10 @@ locals {
       log  = "log-docdb-certs"
     }
 
+    file = {
+      name = "global-bundle.pem"
+    }
+
     cluster = {
       parameter_group = {
         name   = "${local.project_name}-cluster-parameter-group"
