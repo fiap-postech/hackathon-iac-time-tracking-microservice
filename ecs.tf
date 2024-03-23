@@ -243,7 +243,7 @@ resource "aws_ecs_task_definition" "task_definition" {
             value = local.documentdb.cluster.master_username
           },
           {
-            name  = "payment-service.configuration.s3.mongo-ssl.bucket"
+            name  = "time-tracking-service.configuration.s3.mongo-ssl.bucket"
             value = local.documentdb.bucket.name
           }
         ]
