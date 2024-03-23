@@ -82,7 +82,7 @@ locals {
           },
           {
             name  = "db.database"
-            value = "paymentdb"
+            value = "timetrackingdb"
           },
           {
             name  = "db.port"
